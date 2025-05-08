@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nayeem Islam Nishad</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo"><b>Nayeem Islam Nishad</b></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+ <br>
+  <main class="split-layout">
+    <section class="left-panel">
+      <div class="content">
+        <h1>Hello, I'm <span>YOU</span></h1>
+        <p>Creative Developer & Designer. Lorem ipsum dolor sit  doloribus amet, ullam ex, aut dolor tempora voluptatem debitis blanditiis quo adipisci perspiciatis soluta sint pariatur est! Ex voluptatem magnam numquam!</p>
+<br>
+        <p>Lorem ipsum dolor sit arem saepe, dolore eaque quia? Magnam mollitia autem libero alias possimus facere numquam repudiandae voluptates non.</p>
+    </div>
+    </section>
+<br><br>
+    <section class="right-panel">
+      <svg class="curve" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M100,0 C70,50 70,50 100,100 L0,100 L0,0 Z" fill="#1a1a1a"/>
+      </svg>
+      <div class="slider" id="slider">
+        <div class="slide" style="background-image: url('photos/cover.jpg');"></div>
+        <div class="slide next"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const images = [
+      'photos/cover.jpg',
+    'photos/cover1.jpg',
+    'photos/cover2.jpg'
+    ];
+
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('.slide');
+
+    setInterval(() => {
+      const currentSlide = slides[0];
+      const nextSlide = slides[1];
+
+      currentIndex = (currentIndex + 1) % images.length;
+
+      nextSlide.style.backgroundImage = `url('${images[currentIndex]}')`;
+      slider.classList.add('slide-anim');
+
+      setTimeout(() => {
+        currentSlide.style.backgroundImage = nextSlide.style.backgroundImage;
+        slider.classList.remove('slide-anim');
+      }, 1000);
+    }, 10000);
+  </script>
+
+</body>
+</html>
