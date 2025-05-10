@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 body {
@@ -174,11 +174,13 @@ body {
 
 
 .education-card {
-  background: white;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #0000001c;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    border: 2px #f8f6f617 solid;
 }
 
 .education-card:hover {
@@ -319,7 +321,7 @@ body {
 
 
 .education-section {
-  background-color: #f8f9fa;
+  background-color:#1b1d1e;
   padding: 60px 40px;
   font-family: 'Jost', sans-serif;
   color: #1a1a1a;
@@ -336,18 +338,19 @@ body {
 .education-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .education-card {
-  background: white;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+    background: #0000001c;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    border: 2px #f8f6f617 solid;
 }
 
 .education-card:hover {
@@ -383,3 +386,27 @@ body {
     padding: 40px 10px;
   }
 }
+
+
+.animated-underline {
+      display: inline-block;
+      position: relative;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .animated-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 3px;
+      width: 0;
+      background-color:#ff3b3e;
+      animation: underline-grow 2s ease forwards;
+    }
+
+    @keyframes underline-grow {
+      from { width: 0; }
+      to { width: 100%; }
+    }
